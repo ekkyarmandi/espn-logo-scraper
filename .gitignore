@@ -1,0 +1,6 @@
+# Directory
+.venv/
+logo/
+
+# Files
+*.zip
