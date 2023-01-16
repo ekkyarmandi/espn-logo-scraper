@@ -16,6 +16,10 @@ I realize the number 349 from the first html tag above was an id for a team. In 
 
 Then I start develop some functions for checking the output folder existance, for making a GET request, query a soup object, and image file downloader.
 
+Instead of trying to find the image url, I think the better solution is to find the team id.
+
+Team id are lay on the `href` attribute on the parent tag as the `img` tag above. Then, I subtitute the 349 with the team id I gathered, download it, and manage the output on the logos folder.
+
 The library I use for developing the script was only using `requests`, `BeautifulSoup`, and `wget`. All the dependencies can be installed using python PIP.
 ```
 pip install -r requirements.txt
@@ -24,10 +28,6 @@ pip install -r requirements.txt
 To test the app, you can run the app.py
 ```
 python app.py
-```
-or
-```
-python3 app.py
 ```
 
 You also can change to the other ESPN target URL by changing the variable `url` inside the [app.py](/app.py).
