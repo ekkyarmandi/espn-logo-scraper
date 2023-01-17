@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from wget import download
+import urllib
 import os
 
 
@@ -34,7 +35,11 @@ def espn_img_downloader(url, path):
     src = f"https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/{team_id}.png"
     filename = os.path.join("logos", path, f"{team_name}.png")
     if not os.path.exists(filename):
-        download(src, filename)
+        try:
+            download(src, filename, bar=None)
+            print(f"Downloaded {team_name} logo")
+        except urllib.error.HTTPError:
+            print(f"Error downloading {team_name} logo")
 
 
 if __name__ == "__main__":
