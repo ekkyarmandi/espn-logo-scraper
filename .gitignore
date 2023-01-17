@@ -1,6 +1,8 @@
 # Directory
+*__pycache__/
 .venv/
 logo/
+logos/
 
 # Files
 *.zip
